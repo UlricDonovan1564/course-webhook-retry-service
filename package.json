@@ -1,0 +1,25 @@
+{
+  "name": "course-webhook-retry-service",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test dist/course_delivery.test.js",
+    "start": "node dist/delivery_server.js",
+    "worker": "node dist/report_worker.js",
+    "webhook:setup": "node dist/webhook_admin.js setup",
+    "webhook:history": "node dist/webhook_admin.js history"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
